@@ -1,0 +1,118 @@
+.cards {
+  margin: 20px;
+  border-radius: 3px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: relative;
+}
+
+.cards:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.card-image {
+  border-radius: 3px;
+}
+
+.cart-wishlist-but {
+  display: flex;
+  flex-direction: column;
+}
+
+.addOrDel-btn {
+  padding: 10px;
+  border: 1px solid #80808052;
+  color: #7124b4e0;
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 5px 10px 10px 10px;
+}
+
+.addOrDel-link-btn {
+  padding: 11px;
+  border: 1px solid #80808052;
+  color: #7124b4e0;
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 5px 10px 10px 10px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.addOrDel-link-btn:hover {
+  color: white;
+  background-color: #7124b4e0;
+}
+
+.addOrDel-btn:hover {
+  color: white;
+  background-color: #7124b4e0;
+}
+
+.wishlist-btn-empty {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: darkgrey;
+  cursor: pointer;
+}
+
+.wishlist-btn-filled {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #FF5656;
+  cursor: pointer;
+}
+
+.product-title {
+  margin: 5px 10px;
+  color: rgb(66, 66, 66);
+  font-weight: bold;
+}
+
+.product-description {
+  margin: 5px 10px;
+  font-size: small;
+}
+
+.product-pricing {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.product-price {
+  margin: 5px 10px;
+  font-weight: bold;
+  color: rgb(43, 42, 42);
+}
+
+.product-mrp {
+  margin: 5px 10px;
+  font-size: small;
+  text-decoration: line-through;
+  color: #424242;
+  position: absolute;
+  left: 2.5rem;
+  bottom: 2px
+}
+
+.product-discount {
+  margin: 5px 10px;
+  font-size: small;
+  color: #1abe22;
+  font-weight: bold;
+  position: absolute;
+  left: 5rem;
+  bottom: 2px
+}

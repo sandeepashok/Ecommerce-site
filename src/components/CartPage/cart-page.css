@@ -1,0 +1,13 @@
+.cart-card-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.cart-map-section {
+  width: 60%;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
