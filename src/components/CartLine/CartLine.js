@@ -3,14 +3,14 @@ import { CartContext } from "../../App";
 import { WishlistContext } from '../../App'
 import "./cart-line.css";
 export default function CartLine({ cartItem }) {
-  const { addToCart, removeItemHandler } = useContext(CartContext);
-  const { addToWishlist } = useContext(WishlistContext);
+  const { addItemToCart, removeItemFromCart } = useContext(CartContext);
+  const { addItemToWishlist } = useContext(WishlistContext);
 
   const dec = (id) => {
-    addToCart(id, -1);
+    addItemToCart(id, -1);
   };
   const inc = (id) => {
-    addToCart(id, 1);
+    addItemToCart(id, 1);
   };
   return (
     <div className="cart-card" key={cartItem.itemId}>
@@ -40,15 +40,15 @@ export default function CartLine({ cartItem }) {
         </div>
         <div className="cart-wishlist-btn">
           <p
-            onClick={() => removeItemHandler(cartItem.itemId)}
+            onClick={() => removeItemFromCart(cartItem.itemId)}
             className="cart-btn"
           >
             Remove
         </p>
           <p
             onClick={() => {
-              addToWishlist(cartItem.itemId);
-              removeItemHandler(cartItem.itemId);
+              addItemToWishlist(cartItem.itemId);
+              removeItemFromCart(cartItem.itemId);
             }}
             className="cart-btn"
           >

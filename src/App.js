@@ -68,7 +68,7 @@ export default function App() {
     );
   }, []);
 
-  const addToWishlist = (id) => {
+  const addItemToWishlist = (id) => {
     const wishlistItemExists = wishlist.find((product) => {
       return product.itemId === id;
     });
@@ -86,7 +86,7 @@ export default function App() {
     }
   };
 
-  const addToCart = (id, count) => {
+  const addItemToCart = (id, count) => {
     const cartItem = cart.find((product) => {
       return product.itemId === id;
     });
@@ -114,7 +114,7 @@ export default function App() {
     }
   };
 
-  const removeItemHandler = (id) => {
+  const removeItemFromCart = (id) => {
     const filteredItem = cart.filter((product) => {
       return product.itemId !== id;
     });
@@ -122,7 +122,7 @@ export default function App() {
     setCart(filteredItem);
   };
 
-  const removeWishlistItemHandler = (id) => {
+  const removeItemFromWishlist = (id) => {
     const filteredItem = wishlist.filter((product) => {
       return product.itemId !== id;
     });
@@ -135,9 +135,9 @@ export default function App() {
 
       <Navbar />
 
-      <CartContext.Provider value={{ cart, addToCart, removeItemHandler, }}>
+      <CartContext.Provider value={{ cart, addItemToCart, removeItemFromCart, }}>
         <WishlistContext.Provider
-          value={{ wishlist, addToWishlist, removeWishlistItemHandler }}
+          value={{ wishlist, addItemToWishlist, removeItemFromWishlist }}
         >
           <ProductContext.Provider value={{ products }}>
             <Routes>

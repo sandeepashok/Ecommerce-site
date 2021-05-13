@@ -5,8 +5,8 @@ import { FaHeart } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 
 export default function ProductCard({ product }) {
-  const { cart, addToCart } = useContext(CartContext);
-  const { removeWishlistItemHandler, addToWishlist, wishlist } = useContext(WishlistContext);
+  const { cart, addItemToCart } = useContext(CartContext);
+  const { removeItemFromWishlist, addItemToWishlist, wishlist } = useContext(WishlistContext);
 
   const pTag = useRef();
 
@@ -35,16 +35,16 @@ export default function ProductCard({ product }) {
       <div className="cart-wishlist-but">
         {!!cartItems ? <Link to="/cart" className="addOrDel-link-btn">Go to Cart</Link> : <button
           onClick={() => {
-            addToCart(product.itemId, 1);
+            addItemToCart(product.itemId, 1);
           }}
           className="addOrDel-btn"
         >
           Add to Cart
         </button>}
         {!!wishListItems ? <FaHeart className='wishlist-btn-filled' onClick={() => {
-          removeWishlistItemHandler(product.itemId);
+          removeItemFromWishlist(product.itemId);
         }} /> : <FaHeart className='wishlist-btn-empty' onClick={() => {
-          addToWishlist(product.itemId);
+          addItemToWishlist(product.itemId);
         }} />}
       </div>
     </div>
