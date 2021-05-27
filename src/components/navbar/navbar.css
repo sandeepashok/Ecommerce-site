@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
 .nav-bar {
   margin: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.5rem;
   box-shadow: 0px 0px 10px 4px rgb(0 0 0 / 5%);
   position: relative;
 }
 
 .brand {
-  font-size: 1.65rem;
+  font-size: 1.75rem;
   font-style: italic;
   font-weight: bold;
   display: flex;
@@ -29,16 +32,36 @@
 }
 
 .nav-links {
-  margin: 10px;
+  margin: 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
 }
 
 .nav-link {
-  margin: 0 10px;
+  margin: 0 15px;
   text-decoration: none;
   font-size: large;
-  color: #7124b4e8;
+  color: #7124b4;
 }
 
 .active-nav-link {
-  font-weight: bold;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 800px) {
+  .brand {
+    font-size: large;
+  }
+
+  .brand-logo {
+    margin-bottom: -2px;
+  }
+
+  .nav-links {
+    margin: 5px;
+  }
+
+  .nav-link {
+    font-size: small;
+  }
 }

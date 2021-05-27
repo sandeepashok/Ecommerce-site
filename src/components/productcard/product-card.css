@@ -1,12 +1,17 @@
-.cards {
-  margin: 20px;
-  border-radius: 3px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  position: relative;
+.product-card-link {
+  text-decoration: none;
 }
 
-.cards:hover {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+.card {
+  margin: 20px;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  position: relative;
+  height: max-content;
+}
+
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 .card-image {
@@ -32,6 +37,7 @@
   font-weight: 500;
   margin: 5px 10px;
   height: 45px;
+  text-decoration: none;
 }
 
 .addOrDel-link-btn {
@@ -47,16 +53,34 @@
   margin: 5px 10px 10px 10px;
   text-decoration: none;
   text-align: center;
+  text-decoration: none;
 }
 
 .addOrDel-link-btn:hover {
   color: white;
   background-color: #7124b4e0;
+  text-decoration: none;
 }
 
 .addOrDel-btn:hover {
   color: white;
   background-color: #7124b4e0;
+  text-decoration: none;
+}
+
+.out-of-stock {
+  padding: 11px;
+  border: 1px solid #8080800c;
+  color: white;
+  background-color: #80808052;
+  outline: none;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 5px 10px 10px 10px;
+  text-decoration: none;
+  text-align: center;
+  text-decoration: none;
 }
 
 .wishlist-btn-empty {
@@ -83,9 +107,11 @@
   font-weight: bold;
 }
 
-.product-description {
+.product-brand {
   margin: 5px 10px;
   font-size: small;
+  color: #313131a4;
+  font-weight: bold;
 }
 
 .product-pricing {
@@ -96,12 +122,14 @@
 
 .product-price {
   margin: 5px 10px;
+  margin-top: 3px;
   font-weight: bold;
   color: rgb(43, 42, 42);
 }
 
 .product-mrp {
-  margin: 5px 10px;
+  margin: 5px 20px;
+  margin-top: 3px;
   font-size: small;
   text-decoration: line-through;
   color: #424242;
@@ -111,11 +139,22 @@
 }
 
 .product-discount {
-  margin: 5px 10px;
+  margin: 5px 20px;
   font-size: small;
   color: #1abe22;
   font-weight: bold;
   position: absolute;
   left: 5rem;
   bottom: 2px
+}
+
+.product-rating {
+  margin: 0 !important;
+  padding: 0 !important;
+  cursor: auto;
+  margin-left: 0.3rem !important;
+}
+
+.product-rating-stars {
+  font-size: 18px !important;
 }

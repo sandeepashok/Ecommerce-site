@@ -1,45 +1,46 @@
 import "./product-card.css";
-import { useEffect, useRef, useContext } from "react";
-import { CartContext, WishlistContext } from "../../App";
+import { useContext } from "react";
+import { WishlistContext } from "../../Context/WishlistContext"
+import { CartContext } from '../../Context/CartContext'
 import { FaHeart } from 'react-icons/fa';
 import { Link } from "react-router-dom";
+import Rating from '@material-ui/lab/Rating';
+import Box from '@material-ui/core/Box';
 
 export default function ProductCard({ product }) {
   const { cart, addItemToCart } = useContext(CartContext);
   const { removeItemFromWishlist, addItemToWishlist, wishlist } = useContext(WishlistContext);
 
-  const pTag = useRef();
-
-  useEffect(() => {
-
-  }, [cart]);
-
   const wishListItems = wishlist.find((wishlistItem) => {
     return wishlistItem.itemId === product.itemId;
   });
 
-  const cartItems = cart.find((cartItem) => {
+  const cartItems = cart && cart.find((cartItem) => {
     return cartItem.itemId === product.itemId;
   });
 
   return (
-    <div className="cards">
+    <div className="card" >
       <img alt="product" src={product.imageURL} className="card-image" />
+      <p className='product-brand'>{product.brand}</p>
       <p className='product-title' >{product.title}</p>
-      <p className='product-description'>{product.description}</p>
+      <Box component="fieldset" mb={3} borderColor="transparent" className='product-rating'>
+        <Rating name="read-only" className='product-rating-stars' value={product.rating} readOnly />
+      </Box>
       <div className='product-pricing'>
         <p className='product-price'>₹{product.price}</p>
         <p className='product-mrp'>₹{product.mrp}</p>
         <p className='product-discount'>{product.discount}% off</p>
       </div>
       <div className="cart-wishlist-but">
-        {!!cartItems ? <Link to="/cart" className="addOrDel-link-btn">Go to Cart</Link> : <button
+        {!!cartItems ? <Link to="/cart" disabled={!product.inStock} className={product.inStock ? "addOrDel-link-btn" : "out-of-stock"}>{product.inStock ? 'Go to Cart' : 'Out of Stock'}</Link> : <button
+          disabled={!product.inStock}
           onClick={() => {
             addItemToCart(product.itemId, 1);
           }}
-          className="addOrDel-btn"
+          className={product.inStock ? "addOrDel-link-btn" : "out-of-stock"}
         >
-          Add to Cart
+          {product.inStock ? 'Add to Cart' : 'Out of Stock'}
         </button>}
         {!!wishListItems ? <FaHeart className='wishlist-btn-filled' onClick={() => {
           removeItemFromWishlist(product.itemId);

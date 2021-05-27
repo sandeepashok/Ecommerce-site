@@ -1,0 +1,259 @@
+.checkout-page-heading {
+  text-align: center;
+  margin: 1rem;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+  color: rgb(68, 68, 68);
+}
+
+.checkout-page-container {
+  width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #E3E3E3;
+  border-radius: 10px;
+}
+
+.add-address {
+  margin: 1.2rem;
+  color: #807F7F;
+  text-transform: uppercase;
+}
+
+.modal {
+  z-index: 99;
+  color: black;
+  background: rgba(0, 0, 0, 0.9);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hide-modal {
+  display: none;
+}
+
+.modal-container {
+  background: white;
+  height: 250px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.modal-img {
+  height: 70px;
+  width: 70px;
+}
+
+.payment-success {
+  font-weight: bold;
+  font-size: 19px;
+  color: rgb(54, 53, 53);
+}
+
+.checkout-details-payment {
+  width: 45%;
+  margin: 1rem auto;
+}
+
+.checkout-customer-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.checkout-customer-details div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cart-summary-sec {
+  width: 35%;
+  margin: 1rem auto;
+  margin-top: -0.5rem;
+}
+
+.customer-details-input {
+  padding: 1.2rem;
+  margin: 0.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.customer-details-input-dropdown {
+  padding: 1rem 0.1rem;
+  margin: 0.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.customer-details-expdate {
+  padding: 0.84rem 1rem;
+  margin: 0.5rem;
+}
+
+.customer-details-cvv {
+  margin: 0.5rem;
+  padding: 1rem;
+  width: 2rem;
+}
+
+.customer-details-textarea {
+  padding: 1rem;
+  margin: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+  width: 89%;
+  margin-left: 8px;
+}
+
+.pay {
+  padding: 0.9rem;
+  margin: 0.5rem;
+  font-weight: bold;
+  border: 1px solid #80808052;
+  color: #7124b4e0;
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  text-decoration: none;
+}
+
+.pay:hover {
+  color: white;
+  background-color: #7124b4e0;
+  text-decoration: none;
+}
+
+.add-address-btn {
+  padding: 0.9rem;
+  margin: 0.5rem;
+  font-weight: bold;
+  border: 1px solid #80808052;
+  color: #7124b4e0;
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  text-decoration: none;
+}
+
+.disabled {
+  padding: 0.9rem;
+  margin: 0.5rem;
+  border: 1px solid #8080800c;
+  color: white;
+  background-color: #80808052;
+  outline: none;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  text-decoration: none;
+}
+
+.add-address-btn:hover {
+  color: white;
+  background-color: #7124b4e0;
+  text-decoration: none;
+}
+
+.checkout-address-summary {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+
+.checkout-address-summary p {
+  margin: 0.7rem;
+  font-size: 15px;
+  font-weight: bold;
+  color: #1a1919c9;
+  text-transform: capitalize;
+}
+
+.checkout-address-summary span {
+  font-weight: 400;
+  margin-left: 0.5rem;
+  color: #1f1e1e;
+  text-transform: capitalize;
+}
+
+.checkout-address-summary div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #80808052;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .checkout-page-container {
+    width: 90%;
+    flex-direction: column-reverse;
+  }
+
+  .checkout-details-payment {
+    width: 100%;
+  }
+
+  .cart-summary-sec {
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+
+  .checkout-details-payment div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .customer-details-textarea {
+    width: 85%;
+  }
+
+  .add-address {
+    margin-top: 0.25rem;
+  }
+}

@@ -1,13 +1,12 @@
 import React, { useContext } from 'react'
 import './cart-summary.css'
-import { CartContext } from "../../App";
-
+import { CartContext } from "../../Context/CartContext";
 export default function CartSummary() {
   const { cart } = useContext(CartContext);
 
   const mrpArr = [0]
   const priceArr = [0]
-  cart.forEach(cartItem => {
+  cart && cart.forEach(cartItem => {
     mrpArr.push(cartItem.mrp * cartItem.quantity)
     priceArr.push(cartItem.price * cartItem.quantity)
   })
@@ -15,7 +14,6 @@ export default function CartSummary() {
   const totalMrp = mrpArr.reduce((acc, cv) => acc + cv)
   const totalPrice = priceArr.reduce((acc, cv) => acc + cv)
 
-  console.log('mrp: ', totalMrp, 'price: ', totalPrice)
   return (
     <div className='cart-summary-section'>
       <div className='cart-summary'>

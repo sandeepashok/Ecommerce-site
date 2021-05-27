@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { CartContext } from "../../App";
-import { WishlistContext } from '../../App'
+import { WishlistContext } from '../../Context/WishlistContext'
+import { CartContext } from '../../Context/CartContext'
 import "./cart-line.css";
 export default function CartLine({ cartItem }) {
   const { addItemToCart, removeItemFromCart } = useContext(CartContext);
@@ -54,9 +54,6 @@ export default function CartLine({ cartItem }) {
           >
             Move to Wishlist
         </p>
-          {/* <p className='cart-btn'>
-            Proceed to Buy
-          </p> */}
         </div>
       </div>
     </div >

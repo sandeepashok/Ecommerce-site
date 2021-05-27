@@ -1,15 +1,18 @@
 import { useContext } from "react";
 import CartLine from "../CartLine/CartLine";
 import "./cart-page.css";
-import { CartContext } from "../../App";
-import CartSummary from '../cartSummary/CartSummary'
+import { Link } from 'react-router-dom';
+import { CartContext } from "../../Context/CartContext";
+import CartSummary from '../CartSummary/CartSummary'
+import EmptyCart from "../EmptyCartOrWishlist/EmptyCart";
 export default function CartPage() {
   const { cart } = useContext(CartContext);
 
   return (
-    <div className="cart-card-container">
+    Array.isArray(cart) && cart.length ? <div className="cart-card-container">
+      <hr className='section-divider'></hr>
       <div className='cart-map-section'>
-        {cart.map((cartItem) => {
+        {cart && cart.map((cartItem) => {
 
           return (
             <CartLine
@@ -19,7 +22,20 @@ export default function CartPage() {
           );
         })}
       </div>
-      <CartSummary />
-    </div>
+
+      <div className='cartsummary-proceed-section'>
+
+        <CartSummary />
+
+        <Link to='/checkout' ><button className='proceed-to-buy'>
+          Proceed to Buy
+          </button></Link>
+
+        <hr className='section-divider'></hr>
+
+      </div>
+
+
+    </div> : <EmptyCart />
   );
 }
