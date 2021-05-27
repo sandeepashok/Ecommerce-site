@@ -9,3 +9,33 @@
   width: 100%;
   flex-wrap: wrap;
 }
+
+.filter-btn {
+  display: none !important;
+}
+
+@media only screen and (max-width: 800px) {
+  .filter-btn {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 2rem !important;
+    color: white !important;
+    border-radius: 50%;
+    padding: 0.5rem;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 99;
+    background-color: #7124b4;
+  }
+
+  .card-container {
+    width: 100%;
+  }
+
+  .hide-card-container {
+    display: none;
+  }
+
+}

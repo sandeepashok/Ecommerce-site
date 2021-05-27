@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import "./filter-sidebar.css"
 import { ProductContext } from '../../Context/ProductContext'
 
-export default function Sidebar() {
+export default function Sidebar({ sidebarClass }) {
 
   const { productList, clearAll, sortProductCards, departmentSelectionHandler, categorySelectionHandler, brandSelectionHandler, showAccordingToRatingsHandler, includeOutOfStockDisplayHandler, filterState } = useContext(ProductContext);
 
@@ -22,7 +22,7 @@ export default function Sidebar() {
   const [isIncludeOutOfStock, setIsIncludeOutOfStock] = useState(true)
 
   return (
-    <div className='sidebar-container'>
+    <div className={sidebarClass}>
       <header className='header'>
         <h2 className='heading'>Filters</h2>
         <p className='clear-all' onClick={() => clearAll()} >Clear All</p>
