@@ -19,7 +19,7 @@
 
 ### About
 
-  It is an ecommerce site based on clothing where you can find various brands of fitness merchandise. 
+ This is an ecommerce site  called "FitMerch". It based on clothing where you can find various brands of fitness merchandise.
 
 ### Built With
 
