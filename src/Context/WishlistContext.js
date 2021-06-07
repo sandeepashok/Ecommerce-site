@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from 'react'
+import { useState, createContext, useContext, useEffect } from 'react'
 import { ProductContext } from '../Context/ProductContext'
 
 
@@ -9,6 +9,14 @@ export default function WishlistContextProvider({ children }) {
   const { products } = useContext(ProductContext);
 
   const [wishlist, setWishlist] = useState([]);
+
+  useEffect(() => {
+    setWishlist(JSON.parse(localStorage.getItem('wishlist')) || []);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('wishlist', JSON.stringify(wishlist))
+  }, [wishlist])
 
   const addItemToWishlist = (id) => {
     const wishlistItemExists = wishlist.find((product) => {
