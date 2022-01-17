@@ -28,60 +28,33 @@ export default function ProductContextProvider({ children }) {
 
 
   const AllFiltersHandler = () => {
-
     // gender
     const productsCopy = [...productList]
-    const filteredDepartment = productsCopy.filter(product => {
+    let filteredDepartment = filterState.department.length > 0 ? productsCopy.filter(product => {
       return filterState.department.includes(product.gender)
-    })
-    let filteredDepartmentCopy = []
-    Array.isArray(filteredDepartment) && filteredDepartment.length ? filteredDepartmentCopy = [...filteredDepartment] : filteredDepartmentCopy = [...productList]
-
-    // console.log('filteredDepartmentCopy:', filteredDepartmentCopy)
-
+    }) : productsCopy
 
     // category
-    const filteredcategory = filteredDepartmentCopy.filter(product => {
+    const filteredcategory = filterState.categories.length > 0 ? filteredDepartment.filter(product => {
       return filterState.categories.includes(product.category)
-    })
-
-    let filteredcategoryCopy = []
-    Array.isArray(filteredcategory) && filteredcategory.length ? filteredcategoryCopy = [...filteredcategory] : filteredcategoryCopy = [...filteredDepartmentCopy]
-
-    // console.log('filteredcategoryCopy:', filteredcategoryCopy)
-
+    }) : filteredDepartment
 
     // brand
-    const filteredBrand = filteredcategoryCopy.filter(product => {
+    const filteredBrand = filterState.brands.length > 0 ? filteredcategory.filter(product => {
       return filterState.brands.includes(product.brand)
-    })
-
-    let filteredBrandCopy = []
-    Array.isArray(filteredBrand) && filteredBrand.length ? filteredBrandCopy = [...filteredBrand] : filteredBrandCopy = [...filteredcategoryCopy]
-
-    // console.log("filteredBrandCopy", filteredBrandCopy)
-
+    }) : filteredcategory
 
     // rating
-
-    const filteredRating = filteredBrandCopy.filter(product => {
+    const filteredRating = filterState.rating ? filteredBrand.filter(product => {
       return product.rating >= filterState.rating
-    })
-
-    let filteredRatingCopy = []
-    Array.isArray(filteredRating) && filteredRating.length ? filteredRatingCopy = [...filteredRating] : filteredRatingCopy = [...filteredBrandCopy]
-
-    // console.log("filteredRatingCopy", filteredRatingCopy)
+    }) : filteredBrand
 
     //include out of stock
     let inStockElementsCopy = []
-    const inStockElements = filteredRatingCopy.filter(product => product.inStock)
-    filterState.include ? inStockElementsCopy = [...inStockElements] : inStockElementsCopy = [...filteredRatingCopy]
-
-    // console.log(inStockElementsCopy)
+    const inStockElements = filteredRating.filter(product => product.inStock)
+    filterState.include ? inStockElementsCopy = [...inStockElements] : inStockElementsCopy = [...filteredRating]
 
     // sort by
-
     if (filterState.sort === 'asc') {
       setProducts([...(inStockElementsCopy.sort((a, b) => (a.price > b.price) ? 1 : -1))])
     } else if (filterState.sort === 'dec') {
@@ -89,8 +62,6 @@ export default function ProductContextProvider({ children }) {
     } else {
       setProducts([...inStockElementsCopy])
     }
-
-    // console.log("sortedFilteredRatingCopy:", filteredRatingCopy)
 
   }
 
