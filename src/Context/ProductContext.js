@@ -18,7 +18,7 @@ export default function ProductContextProvider({ children }) {
 
 
   useEffect(() => {
-    axios("https://learningexpress.sandeepashok.repl.co/products").then(
+    axios("https://fitmerch-api.onrender.com").then(
       (productList) => {
         setProducts(productList.data);
         setProductList(productList.data);
