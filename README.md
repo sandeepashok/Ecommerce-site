@@ -4,7 +4,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://fitmerch.netlify.app/">
+    <a href="https://fitmerch-legacy.netlify.app/">
      >> Demo <<
     </a>   
   </h3>
